@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>МАЭСТРО - Барбершоп премиум-класса</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,7 +13,7 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
             background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
             color: #e0e0e0;
@@ -72,61 +72,59 @@
             box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
         }
 
-/* Social Links Top */
-.social-top {
-    background: #ffffff;
-    padding: 0.8rem 2rem;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    border-bottom: 1px solid #e0e0e0;
-}
+        /* Social Links Top */
+        .social-top {
+            background: #000;
+            padding: 0.8rem 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
 
-.social-top a {
-    color: #000000;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
-    font-size: 1rem;
-    font-family: 'Arial', sans-serif;
-    letter-spacing: 0.5px;
-}
+        .social-top a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            font-family: 'Inter', sans-serif;
+        }
 
-.social-top a:hover {
-    color: #d4af37;
-}
+        .social-top a:hover {
+            color: #f4c430;
+        }
 
-/* Navigation */
-nav {
-    background: #ffffff;
-    padding: 1rem;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    border-bottom: 1px solid #e0e0e0;
-}
+        /* Navigation */
+        nav {
+            background: #000;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
 
-nav ul li a {
-    color: #000000;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
-    font-size: 1rem;
-    font-family: 'Arial', sans-serif;
-    letter-spacing: 0.5px;
-}
+        nav ul li a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            font-family: 'Inter', sans-serif;
+        }
 
-nav ul li a:hover {
-    color: #d4af37;
+        nav ul li a:hover {
+            color: #f4c430;
         }
 
         /* Sections */
@@ -180,19 +178,22 @@ nav ul li a:hover {
 
         /* Services - Новый дизайн */
         .services-section {
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://avatars.mds.yandex.net/get-altay/6334827/2a0000018008521be4c1637252b06595b3f5/XXXL') center/cover;
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://avatars.mds.yandex.net/get-altay/6334827/2a0000018008521be4c1637252b06595b3f5/XXXL') center/cover;
             padding: 4rem 0;
+        }
+
+        .services-table-container {
+            overflow-x: auto;
+            margin-top: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .services-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 2rem;
             background: linear-gradient(145deg, #2d2d2d, #1f1f1f);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            border: 1px solid #333;
+            min-width: 600px;
         }
 
         .services-table th {
@@ -200,7 +201,7 @@ nav ul li a:hover {
             color: #000;
             padding: 1.2rem 1rem;
             text-align: center;
-            font-weight: bold;
+            font-weight: 600;
             font-size: 1.1rem;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -223,18 +224,18 @@ nav ul li a:hover {
 
         .service-name {
             text-align: left;
-            font-weight: bold;
+            font-weight: 500;
             color: #ffffff;
         }
 
         .price-barberpro {
             color: #f4c430;
-            font-weight: bold;
+            font-weight: 500;
         }
 
         .price-topbarber {
             color: #4a8cff;
-            font-weight: bold;
+            font-weight: 500;
         }
 
         /* Specialists - Новый дизайн в том же стиле */
@@ -280,12 +281,12 @@ nav ul li a:hover {
             color: #ffffff;
             font-size: 1.6rem;
             margin-bottom: 0.5rem;
-            font-weight: bold;
+            font-weight: 600;
         }
 
         .specialist-role {
             color: #d4af37;
-            font-weight: 600;
+            font-weight: 500;
             margin-bottom: 1.5rem;
             font-size: 1.2rem;
             position: relative;
@@ -326,7 +327,7 @@ nav ul li a:hover {
             color: #d4af37;
             margin-bottom: 1.5rem;
             font-size: 1.8rem;
-            font-weight: 700;
+            font-weight: 600;
         }
 
         .features {
@@ -392,7 +393,7 @@ nav ul li a:hover {
             color: #d4af37;
             margin-bottom: 1.5rem;
             font-size: 1.8rem;
-            font-weight: 700;
+            font-weight: 600;
         }
 
         .contact-item {
@@ -428,7 +429,7 @@ nav ul li a:hover {
             padding: 1rem 1.8rem;
             border-radius: 8px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 500;
             transition: all 0.3s ease;
             display: inline-block;
             font-size: 1rem;
@@ -500,6 +501,7 @@ nav ul li a:hover {
             }
             
             .services-table {
+                min-width: 100%;
                 font-size: 0.9rem;
             }
             
@@ -528,12 +530,17 @@ nav ul li a:hover {
 
         @media (max-width: 480px) {
             .services-table {
-                font-size: 0.8rem;
+                font-size: 0.85rem;
             }
             
             .services-table th, 
             .services-table td {
-                padding: 0.6rem 0.3rem;
+                padding: 0.7rem 0.4rem;
+            }
+            
+            .service-name {
+                max-width: 120px;
+                word-wrap: break-word;
             }
         }
     </style>
@@ -607,92 +614,94 @@ nav ul li a:hover {
         <div class="container">
             <h2 class="section-title">УСЛУГИ</h2>
             
-            <table class="services-table">
-                <thead>
-                    <tr>
-                        <th>УСЛУГА</th>
-                        <th>BARBERPRO</th>
-                        <th>TOPBARBER</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="service-name">Мужская стрижка</td>
-                        <td class="price-barberpro">1700 ₽</td>
-                        <td class="price-topbarber">2500 ₽</td>
-                    </tr>
-                    <tr>
-                        <td class="service-name">Моделирование бороды</td>
-                        <td class="price-barberpro">1200 ₽</td>
-                        <td class="price-topbarber">1800 ₽</td>
-                    </tr>
-                    <tr>
-                        <td class="service-name">Коррекция бороды</td>
-                        <td class="price-barberpro">900 ₽</td>
-                        <td class="price-topbarber">1500 ₽</td>
-                    </tr>
-                    <tr>
-                        <td class="service-name">Отец+Сын</td>
-                        <td class="price-barberpro">2800 ₽</td>
-                        <td class="price-topbarber">3500 ₽</td>
-                    </tr>
-                    <tr>
-                        <td class="service-name">Стрижка под машинку</td>
-                        <td class="price-barberpro">900 ₽</td>
-                        <td class="price-topbarber">1500 ₽</td>
-                    </tr>
-                    <tr>
-                        <td class="service-name">Детская стрижка</td>
-                        <td class="price-barberpro">1300 ₽</td>
-                        <td class="price-topbarber">1800 ₽</td>
-                    </tr>
-                    <tr>
-                        <td class="service-name">Hair tattoo</td>
-                        <td class="price-barberpro">300 ₽</td>
-                        <td class="price-topbarber">400 ₽</td>
-                    </tr>
-                    <tr>
-                        <td class="service-name">Укладка волос</td>
-                        <td class="price-barberpro">400 ₽</td>
-                        <td class="price-topbarber">600 ₽</td>
-                    </tr>
-                    <tr>
-                        <td class="service-name">Стрижка+Коррекция</td>
-                        <td class="price-barberpro">2500 ₽</td>
-                        <td class="price-topbarber">3600 ₽</td>
-                    </tr>
-                    <tr>
-                        <td class="service-name">Стрижка+Моделирование</td>
-                        <td class="price-barberpro">2900 ₽</td>
-                        <td class="price-topbarber">4000 ₽</td>
-                    </tr>
-                    <tr>
-                        <td class="service-name">Машинка+Моделирование</td>
-                        <td class="price-barberpro">2000 ₽</td>
-                        <td class="price-topbarber">3100 ₽</td>
-                    </tr>
-                    <tr>
-                        <td class="service-name">Традиционное бритье</td>
-                        <td class="price-barberpro">1300 ₽</td>
-                        <td class="price-topbarber">1500 ₽</td>
-                    </tr>
-                    <tr>
-                        <td class="service-name">Черная маска</td>
-                        <td class="price-barberpro">1100 ₽</td>
-                        <td class="price-topbarber">1100 ₽</td>
-                    </tr>
-                    <tr>
-                        <td class="service-name">Чистка лица</td>
-                        <td class="price-barberpro">4000 ₽</td>
-                        <td class="price-topbarber">4000 ₽</td>
-                    </tr>
-                    <tr>
-                        <td class="service-name">Воск/Камуфляж</td>
-                        <td class="price-barberpro">400 ₽</td>
-                        <td class="price-topbarber">400 ₽</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="services-table-container">
+                <table class="services-table">
+                    <thead>
+                        <tr>
+                            <th>УСЛУГА</th>
+                            <th>BARBERPRO</th>
+                            <th>TOPBARBER</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="service-name">Мужская стрижка</td>
+                            <td class="price-barberpro">1700 ₽</td>
+                            <td class="price-topbarber">2500 ₽</td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Моделирование бороды</td>
+                            <td class="price-barberpro">1200 ₽</td>
+                            <td class="price-topbarber">1800 ₽</td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Коррекция бороды</td>
+                            <td class="price-barberpro">900 ₽</td>
+                            <td class="price-topbarber">1500 ₽</td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Отец+Сын</td>
+                            <td class="price-barberpro">2800 ₽</td>
+                            <td class="price-topbarber">3500 ₽</td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Стрижка под машинку</td>
+                            <td class="price-barberpro">900 ₽</td>
+                            <td class="price-topbarber">1500 ₽</td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Детская стрижка</td>
+                            <td class="price-barberpro">1300 ₽</td>
+                            <td class="price-topbarber">1800 ₽</td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Hair tattoo</td>
+                            <td class="price-barberpro">300 ₽</td>
+                            <td class="price-topbarber">400 ₽</td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Укладка волос</td>
+                            <td class="price-barberpro">400 ₽</td>
+                            <td class="price-topbarber">600 ₽</td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Стрижка+Коррекция</td>
+                            <td class="price-barberpro">2500 ₽</td>
+                            <td class="price-topbarber">3600 ₽</td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Стрижка+Моделирование</td>
+                            <td class="price-barberpro">2900 ₽</td>
+                            <td class="price-topbarber">4000 ₽</td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Машинка+Моделирование</td>
+                            <td class="price-barberpro">2000 ₽</td>
+                            <td class="price-topbarber">3100 ₽</td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Традиционное бритье</td>
+                            <td class="price-barberpro">1300 ₽</td>
+                            <td class="price-topbarber">1500 ₽</td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Черная маска</td>
+                            <td class="price-barberpro">1100 ₽</td>
+                            <td class="price-topbarber">1100 ₽</td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Чистка лица</td>
+                            <td class="price-barberpro">4000 ₽</td>
+                            <td class="price-topbarber">4000 ₽</td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Воск/Камуфляж</td>
+                            <td class="price-barberpro">400 ₽</td>
+                            <td class="price-topbarber">400 ₽</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </section>
 
@@ -783,7 +792,7 @@ nav ul li a:hover {
                 <h3>ЗАПИСАТЬСЯ ОНЛАЙН</h3>
                 <p>Найдите нас на картах Яндекс и записывайтесь удобным для вас способом!</p>
                 
-                <div style="background: #f5f5f5; padding: 2.5rem; border-radius: 15px; margin-top: 1.5rem; text-align: center;">
+                <div style="background: rgba(245, 245, 245, 0.9); padding: 2.5rem; border-radius: 15px; margin-top: 1.5rem; text-align: center;">
                     <h4 style="color: #d4af37; margin-bottom: 1.2rem; font-size: 1.4rem;">🗺️ Мы на картах</h4>
                     <p style="margin-bottom: 1.5rem; font-size: 1.1rem; color: black;">Нажмите на кнопку ниже чтобы открыть наше местоположение</p>
                     <a href="https://yandex.ru/maps/org/maestro/3830236617/?ll=37.596554%2C55.654246&mode=search&sctx=ZAAAAAgBEAAaKAoSCW1YU1kU0EJAEWFVvfxOx0tAEhIJzefc7Xpptj8RyeNp%2BYGrnD8iBgABAgMEBSgKOABA7q0HSAFqAnJ1nQHNzMw9oAEAqAEAvQF%2FUEVEggIO0LzQsNGN0YHRgtGA0L6KAgCSAgCaAgxkZXNrdG9%2B-LW1hcHM%3D&sll=37.596554%2C55.654246&sspn=0.055320%2C0.021981&text=%D0%BC%D0%B0%D1%8D%D1%81%D1%82%D1%80%D0%BE&z=14.93" class="cta-button" target="_blank" style="display: inline-block;">📍 Открыть на карте</a>
