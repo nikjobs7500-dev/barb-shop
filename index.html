@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
+<head><!DOCTYPE html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -113,7 +115,7 @@
 
         /* Sections */
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 4rem 2rem;
         }
@@ -131,17 +133,18 @@
         /* Services - Unified Design for Desktop and Mobile */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
             margin-top: 2rem;
         }
 
         .service-category {
-            background: white;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             border-radius: 15px;
             padding: 2rem;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
+            border: 1px solid #dee2e6;
         }
 
         .service-category:hover {
@@ -149,8 +152,8 @@
         }
 
         .category-title {
-            color: #000;
-            font-size: 1.5rem;
+            color: #2c2c2c;
+            font-size: 1.4rem;
             margin-bottom: 1.5rem;
             text-align: center;
             border-bottom: 3px solid #d4af37;
@@ -163,7 +166,7 @@
             grid-template-columns: 1fr;
             gap: 0.8rem;
             padding: 1.2rem 0;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #dee2e6;
         }
 
         .service-item:last-child {
@@ -172,14 +175,15 @@
 
         .service-name {
             font-weight: bold;
-            color: #000;
-            font-size: 1.2rem;
+            color: #2c2c2c;
+            font-size: 1.3rem;
+            line-height: 1.3;
         }
 
         .service-description {
             color: #666;
-            font-size: 0.95rem;
-            line-height: 1.5;
+            font-size: 0.9rem;
+            line-height: 1.4;
         }
 
         .prices {
@@ -191,26 +195,26 @@
 
         .price-item {
             text-align: center;
-            padding: 0.8rem;
+            padding: 0.6rem;
             border-radius: 8px;
             font-weight: bold;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         .price-barberpro {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.2));
-            color: #d4af37;
-            border: 2px solid #d4af37;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.25));
+            color: #b8941f;
+            border: 1px solid #d4af37;
         }
 
         .price-topbarber {
-            background: linear-gradient(135deg, rgba(44, 90, 160, 0.1), rgba(44, 90, 160, 0.2));
+            background: linear-gradient(135deg, rgba(44, 90, 160, 0.15), rgba(44, 90, 160, 0.25));
             color: #2c5aa0;
-            border: 2px solid #2c5aa0;
+            border: 1px solid #2c5aa0;
         }
 
         .price-label {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             opacity: 0.9;
             margin-bottom: 0.3rem;
             font-weight: 600;
@@ -225,12 +229,13 @@
         }
 
         .specialist-card {
-            background: white;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             padding: 2.5rem;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             text-align: center;
             transition: transform 0.3s ease;
+            border: 1px solid #dee2e6;
         }
 
         .specialist-card:hover {
@@ -238,7 +243,7 @@
         }
 
         .specialist-name {
-            color: #000;
+            color: #2c2c2c;
             font-size: 1.6rem;
             margin-bottom: 0.5rem;
             font-weight: bold;
@@ -318,10 +323,11 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
-            background: white;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             padding: 3rem;
             border-radius: 20px;
             box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border: 1px solid #dee2e6;
         }
 
         .contact-info h3 {
@@ -430,6 +436,12 @@
         }
 
         /* Responsive */
+        @media (max-width: 1200px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 3rem;
@@ -442,6 +454,10 @@
             
             .section-title {
                 font-size: 2.2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
             }
             
             .about-content,
@@ -473,8 +489,8 @@
                 height: 160px;
             }
             
-            .services-grid {
-                grid-template-columns: 1fr;
+            .service-name {
+                font-size: 1.2rem;
             }
         }
     </style>
@@ -734,11 +750,11 @@
                     <div class="prices">
                         <div class="price-item price-barberpro">
                             <div class="price-label">BarberPro</div>
-                            400-1200 ₽
+                            400 ₽
                         </div>
                         <div class="price-item price-topbarber">
                             <div class="price-label">TopBarber</div>
-                            400-1200 ₽
+                            400 ₽
                         </div>
                     </div>
                 </div>
@@ -868,7 +884,7 @@
                 <div style="background: #f5f5f5; padding: 2.5rem; border-radius: 15px; margin-top: 1.5rem; text-align: center;">
                     <h4 style="color: #d4af37; margin-bottom: 1.2rem; font-size: 1.4rem;">🗺️ Мы на картах</h4>
                     <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">Нажмите на кнопку ниже чтобы открыть наше местоположение</p>
-                    <a href="https://yandex.ru/maps/org/maestro/3830236617/?ll=37.596554%2C55.654246&mode=search&sctx=ZAAAAAgBEAAaKAoSCW1YU1kU0EJAEWFVvfxOx0tAEhIJzefc7Xpptj8RyeNp%2BYGrnD8iBgABAgMEBSgKOABA7q0HSAFqAnJ1nQHNzMw9oAEAqAEAvQF%2FUEVEggIO0LzQsNGN0YHRgtGA0L6KAgCSAgCaAgxkZXNrdG9wLW1hcHM%3D&sll=37.596554%2C55.654246&sspn=0.055320%2C0.021981&text=%D0%BC%D0%B0%D1%8D%D1%81%D1%82%D1%80%D0%BE&z=14.93" class="cta-button" target="_blank" style="display: inline-block;">📍 Открыть на карте</a>
+                    <a href="https://yandex.ru/maps/org/maestro/3830236617/?ll=37.596554%2C55.654246&mode=search&sctx=ZAAAAAgBEAAaKAoSCW1YU1kU0EJAEWFVvfxOx0tAEhIJzefc7Xpptj8RyeNp%2BYGrnD8iBgABAgMEBSgKOABA7q0HSAFqAnJ1nQHNzMw9oAEAqAEAvQF%2FUEVEggIO0LzQsNGN0YHRgtGA0L6KAgCSAgCaAgxkZXNrdG9%2B-LW1hcHM%3D&sll=37.596554%2C55.654246&sspn=0.055320%2C0.021981&text=%D0%BC%D0%B0%D1%8D%D1%81%D1%82%D1%80%D0%BE&z=14.93" class="cta-button" target="_blank" style="display: inline-block;">📍 Открыть на карте</a>
                 </div>
             </div>
         </div>
