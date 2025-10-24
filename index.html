@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head><!DOCTYPE html>
-<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,8 +14,8 @@
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            color: #333;
+            background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
+            color: #e0e0e0;
         }
 
         /* Header */
@@ -123,14 +121,14 @@
         .section-title {
             text-align: center;
             color: #d4af37;
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-bottom: 3rem;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             font-weight: 700;
         }
 
-        /* Services - Unified Design for Desktop and Mobile */
+        /* Services - Новый дизайн */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -139,111 +137,189 @@
         }
 
         .service-category {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            background: linear-gradient(145deg, #2d2d2d, #1f1f1f);
             border-radius: 15px;
             padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-            border: 1px solid #dee2e6;
+            box-shadow: 
+                0 10px 30px rgba(0,0,0,0.5),
+                inset 0 1px 0 rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #333;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #d4af37, #f4c430, #d4af37);
         }
 
         .service-category:hover {
             transform: translateY(-5px);
+            box-shadow: 
+                0 15px 35px rgba(0,0,0,0.6),
+                0 0 0 1px rgba(212, 175, 55, 0.2);
         }
 
         .category-title {
-            color: #2c2c2c;
-            font-size: 1.4rem;
+            color: #d4af37;
+            font-size: 1.5rem;
             margin-bottom: 1.5rem;
             text-align: center;
-            border-bottom: 3px solid #d4af37;
-            padding-bottom: 0.8rem;
             font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .category-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 25%;
+            right: 25%;
+            height: 3px;
+            background: #d4af37;
+            border-radius: 2px;
         }
 
         .service-item {
             display: grid;
             grid-template-columns: 1fr;
             gap: 0.8rem;
-            padding: 1.2rem 0;
-            border-bottom: 1px solid #dee2e6;
+            padding: 1.5rem 0;
+            position: relative;
         }
 
-        .service-item:last-child {
-            border-bottom: none;
+        .service-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                #d4af37 20%, 
+                #d4af37 80%, 
+                transparent 100%);
+            opacity: 0.3;
+        }
+
+        .service-item:last-child::after {
+            display: none;
         }
 
         .service-name {
             font-weight: bold;
-            color: #2c2c2c;
-            font-size: 1.3rem;
+            color: #ffffff;
+            font-size: 1.2rem;
             line-height: 1.3;
+            margin-bottom: 0.5rem;
         }
 
         .service-description {
-            color: #666;
+            color: #b0b0b0;
             font-size: 0.9rem;
             line-height: 1.4;
+            margin-bottom: 0.8rem;
         }
 
         .prices {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 0.8rem;
-            margin-top: 0.8rem;
+            gap: 0.6rem;
+            margin-top: 0.5rem;
         }
 
         .price-item {
             text-align: center;
-            padding: 0.6rem;
-            border-radius: 8px;
+            padding: 0.5rem 0.3rem;
+            border-radius: 6px;
             font-weight: bold;
-            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            min-width: 0;
+        }
+
+        .price-item:hover {
+            transform: scale(1.03);
         }
 
         .price-barberpro {
             background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.25));
-            color: #b8941f;
-            border: 1px solid #d4af37;
+            color: #f4c430;
+            border: 1px solid rgba(212, 175, 55, 0.3);
         }
 
         .price-topbarber {
             background: linear-gradient(135deg, rgba(44, 90, 160, 0.15), rgba(44, 90, 160, 0.25));
-            color: #2c5aa0;
-            border: 1px solid #2c5aa0;
+            color: #4a8cff;
+            border: 1px solid rgba(44, 90, 160, 0.3);
         }
 
         .price-label {
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             opacity: 0.9;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.2rem;
             font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        /* Specialists */
+        .price-amount {
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        /* Specialists - Новый дизайн в том же стиле */
         .specialists-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             margin-top: 2rem;
         }
 
         .specialist-card {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 2.5rem;
+            background: linear-gradient(145deg, #2d2d2d, #1f1f1f);
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 2.5rem;
+            box-shadow: 
+                0 10px 30px rgba(0,0,0,0.5),
+                inset 0 1px 0 rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #333;
+            position: relative;
+            overflow: hidden;
             text-align: center;
-            transition: transform 0.3s ease;
-            border: 1px solid #dee2e6;
+        }
+
+        .specialist-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #d4af37, #f4c430, #d4af37);
         }
 
         .specialist-card:hover {
             transform: translateY(-5px);
+            box-shadow: 
+                0 15px 35px rgba(0,0,0,0.6),
+                0 0 0 1px rgba(212, 175, 55, 0.2);
         }
 
         .specialist-name {
-            color: #2c2c2c;
+            color: #ffffff;
             font-size: 1.6rem;
             margin-bottom: 0.5rem;
             font-weight: bold;
@@ -254,10 +330,22 @@
             font-weight: 600;
             margin-bottom: 1.5rem;
             font-size: 1.2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .specialist-role::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 30%;
+            right: 30%;
+            height: 2px;
+            background: #d4af37;
         }
 
         .specialist-description {
-            color: #666;
+            color: #b0b0b0;
             line-height: 1.7;
             text-align: left;
             font-size: 1rem;
@@ -293,6 +381,7 @@
             padding-left: 2.5rem;
             position: relative;
             font-size: 1.1rem;
+            color: #e0e0e0;
         }
 
         .features li:before {
@@ -309,7 +398,7 @@
             padding: 2rem;
             background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.05));
             border-radius: 15px;
-            border: 2px solid rgba(212, 175, 55, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.3);
         }
 
         .promo-section h4 {
@@ -323,11 +412,11 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            background: linear-gradient(145deg, #2d2d2d, #1f1f1f);
             padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-            border: 1px solid #dee2e6;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid #333;
         }
 
         .contact-info h3 {
@@ -440,23 +529,18 @@
             .services-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+            
+            .specialists-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 3rem;
-                letter-spacing: 3px;
-            }
-            
-            .hero p {
-                font-size: 1.2rem;
-            }
-            
-            .section-title {
-                font-size: 2.2rem;
-            }
-            
             .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .specialists-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -471,8 +555,21 @@
                 text-align: center;
             }
             
+            .hero h1 {
+                font-size: 3rem;
+                letter-spacing: 3px;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
             .container {
                 padding: 2rem 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
             }
             
             .hero {
@@ -490,7 +587,15 @@
             }
             
             .service-name {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
+            }
+            
+            .specialist-card {
+                padding: 2rem;
+            }
+            
+            .contact-grid {
+                padding: 2rem;
             }
         }
     </style>
@@ -528,11 +633,11 @@
                     <div class="prices">
                         <div class="price-item price-barberpro">
                             <div class="price-label">BarberPro</div>
-                            1700 ₽
+                            <div class="price-amount">1700 ₽</div>
                         </div>
                         <div class="price-item price-topbarber">
                             <div class="price-label">TopBarber</div>
-                            2500 ₽
+                            <div class="price-amount">2500 ₽</div>
                         </div>
                     </div>
                 </div>
@@ -543,11 +648,11 @@
                     <div class="prices">
                         <div class="price-item price-barberpro">
                             <div class="price-label">BarberPro</div>
-                            1200 ₽
+                            <div class="price-amount">1200 ₽</div>
                         </div>
                         <div class="price-item price-topbarber">
                             <div class="price-label">TopBarber</div>
-                            1800 ₽
+                            <div class="price-amount">1800 ₽</div>
                         </div>
                     </div>
                 </div>
@@ -558,11 +663,11 @@
                     <div class="prices">
                         <div class="price-item price-barberpro">
                             <div class="price-label">BarberPro</div>
-                            900 ₽
+                            <div class="price-amount">900 ₽</div>
                         </div>
                         <div class="price-item price-topbarber">
                             <div class="price-label">TopBarber</div>
-                            1500 ₽
+                            <div class="price-amount">1500 ₽</div>
                         </div>
                     </div>
                 </div>
@@ -573,11 +678,11 @@
                     <div class="prices">
                         <div class="price-item price-barberpro">
                             <div class="price-label">BarberPro</div>
-                            2800 ₽
+                            <div class="price-amount">2800 ₽</div>
                         </div>
                         <div class="price-item price-topbarber">
                             <div class="price-label">TopBarber</div>
-                            3500 ₽
+                            <div class="price-amount">3500 ₽</div>
                         </div>
                     </div>
                 </div>
@@ -592,11 +697,11 @@
                     <div class="prices">
                         <div class="price-item price-barberpro">
                             <div class="price-label">BarberPro</div>
-                            900 ₽
+                            <div class="price-amount">900 ₽</div>
                         </div>
                         <div class="price-item price-topbarber">
                             <div class="price-label">TopBarber</div>
-                            1500 ₽
+                            <div class="price-amount">1500 ₽</div>
                         </div>
                     </div>
                 </div>
@@ -607,11 +712,11 @@
                     <div class="prices">
                         <div class="price-item price-barberpro">
                             <div class="price-label">BarberPro</div>
-                            1300 ₽
+                            <div class="price-amount">1300 ₽</div>
                         </div>
                         <div class="price-item price-topbarber">
                             <div class="price-label">TopBarber</div>
-                            1800 ₽
+                            <div class="price-amount">1800 ₽</div>
                         </div>
                     </div>
                 </div>
@@ -622,11 +727,11 @@
                     <div class="prices">
                         <div class="price-item price-barberpro">
                             <div class="price-label">BarberPro</div>
-                            300 ₽
+                            <div class="price-amount">300 ₽</div>
                         </div>
                         <div class="price-item price-topbarber">
                             <div class="price-label">TopBarber</div>
-                            400 ₽
+                            <div class="price-amount">400 ₽</div>
                         </div>
                     </div>
                 </div>
@@ -637,11 +742,11 @@
                     <div class="prices">
                         <div class="price-item price-barberpro">
                             <div class="price-label">BarberPro</div>
-                            400 ₽
+                            <div class="price-amount">400 ₽</div>
                         </div>
                         <div class="price-item price-topbarber">
                             <div class="price-label">TopBarber</div>
-                            600 ₽
+                            <div class="price-amount">600 ₽</div>
                         </div>
                     </div>
                 </div>
@@ -656,11 +761,11 @@
                     <div class="prices">
                         <div class="price-item price-barberpro">
                             <div class="price-label">BarberPro</div>
-                            2500 ₽
+                            <div class="price-amount">2500 ₽</div>
                         </div>
                         <div class="price-item price-topbarber">
                             <div class="price-label">TopBarber</div>
-                            3600 ₽
+                            <div class="price-amount">3600 ₽</div>
                         </div>
                     </div>
                 </div>
@@ -671,11 +776,11 @@
                     <div class="prices">
                         <div class="price-item price-barberpro">
                             <div class="price-label">BarberPro</div>
-                            2900 ₽
+                            <div class="price-amount">2900 ₽</div>
                         </div>
                         <div class="price-item price-topbarber">
                             <div class="price-label">TopBarber</div>
-                            4000 ₽
+                            <div class="price-amount">4000 ₽</div>
                         </div>
                     </div>
                 </div>
@@ -686,11 +791,11 @@
                     <div class="prices">
                         <div class="price-item price-barberpro">
                             <div class="price-label">BarberPro</div>
-                            2000 ₽
+                            <div class="price-amount">2000 ₽</div>
                         </div>
                         <div class="price-item price-topbarber">
                             <div class="price-label">TopBarber</div>
-                            3100 ₽
+                            <div class="price-amount">3100 ₽</div>
                         </div>
                     </div>
                 </div>
@@ -705,11 +810,11 @@
                     <div class="prices">
                         <div class="price-item price-barberpro">
                             <div class="price-label">BarberPro</div>
-                            1300 ₽
+                            <div class="price-amount">1300 ₽</div>
                         </div>
                         <div class="price-item price-topbarber">
                             <div class="price-label">TopBarber</div>
-                            1500 ₽
+                            <div class="price-amount">1500 ₽</div>
                         </div>
                     </div>
                 </div>
@@ -720,11 +825,11 @@
                     <div class="prices">
                         <div class="price-item price-barberpro">
                             <div class="price-label">BarberPro</div>
-                            1100 ₽
+                            <div class="price-amount">1100 ₽</div>
                         </div>
                         <div class="price-item price-topbarber">
                             <div class="price-label">TopBarber</div>
-                            1100 ₽
+                            <div class="price-amount">1100 ₽</div>
                         </div>
                     </div>
                 </div>
@@ -735,11 +840,11 @@
                     <div class="prices">
                         <div class="price-item price-barberpro">
                             <div class="price-label">BarberPro</div>
-                            4000 ₽
+                            <div class="price-amount">4000 ₽</div>
                         </div>
                         <div class="price-item price-topbarber">
                             <div class="price-label">TopBarber</div>
-                            4000 ₽
+                            <div class="price-amount">4000 ₽</div>
                         </div>
                     </div>
                 </div>
@@ -750,11 +855,11 @@
                     <div class="prices">
                         <div class="price-item price-barberpro">
                             <div class="price-label">BarberPro</div>
-                            400 ₽
+                            <div class="price-amount">400 ₽</div>
                         </div>
                         <div class="price-item price-topbarber">
                             <div class="price-label">TopBarber</div>
-                            400 ₽
+                            <div class="price-amount">400 ₽</div>
                         </div>
                     </div>
                 </div>
@@ -851,7 +956,7 @@
                     <div>
                         <strong>АДРЕС:</strong><br>
                         Малая Юшуньская ул., 3, Москва
-                    </div>
+                      </div>
                 </div>
                 
                 <div class="contact-item">
@@ -883,7 +988,7 @@
                 
                 <div style="background: #f5f5f5; padding: 2.5rem; border-radius: 15px; margin-top: 1.5rem; text-align: center;">
                     <h4 style="color: #d4af37; margin-bottom: 1.2rem; font-size: 1.4rem;">🗺️ Мы на картах</h4>
-                    <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">Нажмите на кнопку ниже чтобы открыть наше местоположение</p>
+                    <p style="margin-bottom: 1.5rem; font-size: 1.1rem; color: black;">Нажмите на кнопку ниже чтобы открыть наше местоположение</p>
                     <a href="https://yandex.ru/maps/org/maestro/3830236617/?ll=37.596554%2C55.654246&mode=search&sctx=ZAAAAAgBEAAaKAoSCW1YU1kU0EJAEWFVvfxOx0tAEhIJzefc7Xpptj8RyeNp%2BYGrnD8iBgABAgMEBSgKOABA7q0HSAFqAnJ1nQHNzMw9oAEAqAEAvQF%2FUEVEggIO0LzQsNGN0YHRgtGA0L6KAgCSAgCaAgxkZXNrdG9%2B-LW1hcHM%3D&sll=37.596554%2C55.654246&sspn=0.055320%2C0.021981&text=%D0%BC%D0%B0%D1%8D%D1%81%D1%82%D1%80%D0%BE&z=14.93" class="cta-button" target="_blank" style="display: inline-block;">📍 Открыть на карте</a>
                 </div>
             </div>
