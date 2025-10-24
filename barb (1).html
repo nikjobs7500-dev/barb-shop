@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BarbPro - Барбершоп премиум-класса</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #333;
+        }
+
+        /* Header */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3') center/cover;
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            background: #d4af37;
+            color: #000;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #f4c430;
+            transform: translateY(-2px);
+        }
+
+        /* Navigation */
+        nav {
+            background: #000;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+        }
+
+        nav ul li a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #f4c430;
+        }
+
+        /* Sections */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #d4af37;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-left: 4px solid #d4af37;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: #000;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .price {
+            font-size: 1.8rem;
+            color: #d4af37;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        /* About */
+        .about {
+            background: #1a1a1a;
+            color: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            color: #d4af37;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .features {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .features li {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .features li:before {
+            content: "✓";
+            color: #d4af37;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .contact-info h3 {
+            color: #d4af37;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: #d4af37;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-weight: bold;
+        }
+
+        /* Gallery */
+        .gallery {
+            background: #1a1a1a;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            height: 250px;
+            background: linear-gradient(45deg, #333, #555);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gallery-item:before {
+            content: "🎯";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+            opacity: 0.7;
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            color: #d4af37;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+
+        .social-links a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-content,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>BarbPro</h1>
+        <p>ПРЕМИУМ-СТРИЖКИ ДЛЯ НАСТОЯЩИХ МУЖЧИН</p>
+        <button class="cta-button" onclick="scrollToBooking()">ЗАПИСАТЬСЯ ONLINE</button>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#services">УСЛУГИ</a></li>
+            <li><a href="#about">О НАС</a></li>
+            <li><a href="#gallery">ГАЛЕРЕЯ</a></li>
+            <li><a href="#contact">КОНТАКТЫ</a></li>
+        </ul>
+    </nav>
+
+    <!-- Services Section -->
+    <section id="services" class="container">
+        <h2 class="section-title">НАШИ УСЛУГИ</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>МУЖСКАЯ СТРИЖКА</h3>
+                <p>Профессиональная стрижка с учетом особенностей волос и формы головы</p>
+                <div class="price">1500 ₽</div>
+            </div>
+            
+            <div class="service-card">
+                <h3>СТРИЖКА + БОРОДА</h3>
+                <p>Комплексный уход: стрижка, оформление и укладка бороды</p>
+                <div class="price">2500 ₽</div>
+            </div>
+            
+            <div class="service-card">
+                <h3>КОРОЛЕВСКОЕ БРИТЬЕ</h3>
+                <p>Бритье опасной бритвой с использованием премиальной косметики</p>
+                <div class="price">2000 ₽</div>
+            </div>
+            
+            <div class="service-card">
+                <h3>ОТЦЕПАРЩИК ПРО</h3>
+                <p>Экспресс-уход: стрижка, укладка, коррекция бороды за 45 минут</p>
+                <div class="price">1800 ₽</div>
+            </div>
+            
+            <div class="service-card">
+                <h3>ОКРАШИВАНИЕ</h3>
+                <p>Профессиональное окрашивание волос и бороды</p>
+                <div class="price">от 1200 ₽</div>
+            </div>
+            
+            <div class="service-card">
+                <h3>ЧИСТКА ЛИЦА</h3>
+                <p>Глубокая чистка и уход за кожей лица</p>
+                <div class="price">1800 ₽</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">ПОЧЕМУ МЫ ЛУЧШИЕ?</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>МЫ НЕ ПРОСТО СТРИЖЕМ - МЫ СОЗДАЕМ СТИЛЬ</h3>
+                    <p>BarbPro - это не просто барбершоп, это место, где рождается ваш уникальный образ. Наши мастера - настоящие профессионалы, которые постоянно совершенствуют свои навыки.</p>
+                    
+                    <ul class="features">
+                        <li>Только оригинальная профессиональная косметика</li>
+                        <li>Стерильные инструменты и одноразовые расходники</li>
+                        <li>Индивидуальный подход к каждому клиенту</li>
+                        <li>Удобное расположение в центре города</li>
+                        <li>Бесплатный кофе и Wi-Fi во время ожидания</li>
+                        <li>Онлайн-запись 24/7</li>
+                    </ul>
+                </div>
+                <div class="about-text">
+                    <h3>НАШИ ПРЕИМУЩЕСТВА</h3>
+                    <p>Мы используем только лучшее оборудование и косметику мировых брендов: American Crew, Reuzel, Baxter of California.</p>
+                    <p>Каждый наш мастер проходит регулярное обучение и следит за последними трендами в мужских стрижках.</p>
+                    <p>Мы гарантируем: у нас нет "просто хороших" стрижек - только идеальные!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">НАШИ РАБОТЫ</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container">
+        <h2 class="section-title">КОНТАКТЫ И ЗАПИСЬ</h2>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>ПРИХОДИТЕ К НАМ</h3>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <strong>АДРЕС:</strong><br>
+                        г. Москва, ул. Тверская, д. 18<br>
+                        (м. Тверская, 3 минуты пешком)
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">🕒</div>
+                    <div>
+                        <strong>РЕЖИМ РАБОТЫ:</strong><br>
+                        Пн-Пт: 9:00 - 22:00<br>
+                        Сб-Вс: 10:00 - 23:00
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div>
+                        <strong>ТЕЛЕФОН:</strong><br>
+                        +7 (495) 123-45-67
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div>
+                        <strong>EMAIL:</strong><br>
+                        info@barbpro.ru
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-info">
+                <h3>ОНЛАЙН-ЗАПИСЬ</h3>
+                <p>Заполните форму и мы перезвоним вам в течение 15 минут для подтверждения записи</p>
+                
+                <form style="margin-top: 2rem;">
+                    <input type="text" placeholder="Ваше имя" style="width: 100%; padding: 1rem; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 5px;">
+                    <input type="tel" placeholder="Ваш телефон" style="width: 100%; padding: 1rem; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 5px;">
+                    <select style="width: 100%; padding: 1rem; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 5px;">
+                        <option>Выберите услугу</option>
+                        <option>Мужская стрижка</option>
+                        <option>Стрижка + борода</option>
+                        <option>Королевское бритье</option>
+                        <option>Отцепарщик Про</option>
+                    </select>
+                    <button type="button" class="cta-button" style="width: 100%;">ЗАБРОНИРОВАТЬ ВРЕМЯ</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="#">INSTAGRAM</a>
+            <a href="#">VKONTAKTE</a>
+            <a href="#">TELEGRAM</a>
+            <a href="#">WHATSAPP</a>
+        </div>
+        <p>© 2024 BarbPro. Мужской барбершоп премиум-класса. Все права защищены.</p>
+        <p style="margin-top: 1rem; opacity: 0.8;">Сделано с ❤️ для настоящих мужчин</p>
+    </footer>
+
+    <script>
+        function scrollToBooking() {
+            document.getElementById('contact').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Простая анимация появления элементов при скролле
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Наблюдаем за карточками услуг
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
